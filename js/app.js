@@ -20,3 +20,15 @@ const swiper = new Swiper('.swiper', {
         },
     },
 });
+
+const hamburgerBtn = document.querySelector('.hamburger-button');
+const closeBtn = document.querySelector('.close-button');
+const mobileMenu = document.querySelector('.sticky-menu');
+
+hamburgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+});

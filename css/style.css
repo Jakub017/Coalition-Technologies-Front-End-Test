@@ -44,7 +44,7 @@
     align-items: center;
 }
 
-.top-menu {
+.menu {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,6 +110,8 @@
 
 .navbar-history {
     background-color: #FFF;
+    position: sticky;
+    top: 0;
 }
 
 .navbar-history .menu-link {
@@ -118,6 +120,48 @@
 
 .navbar-history .menu-link::after {
     background-color: var(--dark-blue);
+}
+
+.hamburger-button,
+.close-button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.close-button {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+.hamburger-button img,
+.close-button img {
+    width: 30px;
+    height: 30px;
+}
+
+.navbar-history .menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: left 0.3s ease-in-out;
+    background-color: #FFF;
+    height: 100vh;
+    max-width: 300px;
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 6rem 4rem;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-history .menu.active {
+    left: 0;
 }
 
 .history-wrapper {
@@ -180,7 +224,6 @@
     height: 100%;
     background-color: var(--dark-blue);
     opacity: 0.85;
-    z-index: 1;
 }
 
 .carousel-item {
@@ -204,9 +247,9 @@
     max-width: 1300px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 2rem;
 }
 
@@ -228,6 +271,12 @@
 
 
 /* Media queries starts */
+@media(min-width: 768px) {
+    .footer-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
 
 @media(min-width: 1024px) {
 
@@ -252,6 +301,29 @@
 
     .history-description {
         font-size: 1.6rem;
+    }
+
+    .navbar-history .menu {
+        left: 0;
+        position: relative;
+        height: auto;
+        width: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        background-color: transparent;
+        box-shadow: none;
+        flex-direction: row;
+    }
+
+    .close-button,
+    .hamburger-button {
+        display: none;
+    }
+
+    .sticky-menu .logo {
+        display: none;
     }
 
 }
