@@ -36,7 +36,7 @@
 }
 
 .navbar-wrapper {
-    max-width: 1300px;
+    max-width: 1100px;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -112,6 +112,7 @@
     background-color: #FFF;
     position: sticky;
     top: 0;
+    z-index: 10;
 }
 
 .navbar-history .menu-link {
@@ -228,10 +229,217 @@
 
 .carousel-item {
     width: 100%;
+    max-height: 200px;
     object-fit: cover;
 }
 
 /* History section ends */
+
+
+
+/* Team section starts */
+
+.team {
+    position: relative;
+}
+
+.team-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.team-count {
+    width: 180px;
+}
+
+.team-title {
+    font-size: 1.4rem;
+    color: #000;
+    font-family: "Lato", sans-serif;
+    max-width: 700px;
+    text-align: center;
+}
+
+.accordion-button {
+    background-color: #FFF;
+    border: none;
+    border-bottom: 0.2rem solid rgba(0, 0, 0, 0.05);
+    color: #444;
+    cursor: pointer;
+    padding: 1.5rem;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    transition: 0.3s;
+    font-size: 1.4rem;
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-arrow {
+    width: 16px;
+    margin-bottom: -0.3rem;
+}
+
+.accordion-button.active {
+    background-color: #E0E0E0;
+}
+
+.accordion-button.active .accordion-arrow {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    position: relative;
+}
+
+.accordion-content.active {
+    display: block;
+}
+
+.accordion-background {
+    width: 100%;
+    min-height: 300px;
+    object-fit: cover;
+}
+
+.accordion-text {
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.75);
+    position: absolute;
+    left: 10%;
+    top: 10%;
+}
+
+.accordion-text-tab-1 .accordion-date:nth-child(4),
+.accordion-text-tab-1 .accordion-date:nth-child(5),
+.accordion-text-tab-2 .accordion-date:nth-child(3),
+.accordion-text-tab-2 .accordion-date:nth-child(5) {
+    margin-top: 2rem;
+}
+
+.tab-1 .accordion-date:nth-child(4),
+.tab-1 .accordion-date:nth-child(5),
+.tab-2 .accordion-date:nth-child(3),
+.tab-2 .accordion-date:nth-child(5) {
+    margin-top: 2.5rem;
+}
+
+.accordion-heading {
+    color: var(--dark-blue);
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif;
+}
+
+.accordion-date {
+    color: #000;
+    font-size: 1.4rem;
+    font-family: "Lato", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.switcher {
+
+    display: none;
+}
+
+.switcher-bar {
+    background-color: #404F6C;
+}
+
+.switcher-bar-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.switch-button {
+    background-color: transparent;
+    border: none;
+    color: #B0B4BE;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    outline: none;
+    transition: 0.3s;
+    position: relative;
+}
+
+.switch-button.active {
+    background-color: #B0B4BE;
+    color: #404F6C;
+}
+
+.switch-button.active::after {
+    content: "";
+    width: 75%;
+    height: 1px;
+    background-color: #404F6C;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tab-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.switcher-tab {
+    height: 80vh;
+    display: none;
+    position: relative;
+}
+
+.switcher-tab.active {
+    display: block;
+}
+
+.switcher-text-wrapper {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 100%;
+    padding: 2rem;
+    transform: translate(-50%, -50%);
+    max-width: 1100px;
+}
+
+.switcher-text {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: fit-content;
+    padding: 2rem 3rem;
+}
+
+/* Team section ends */
 
 
 
@@ -244,7 +452,7 @@
 
 .footer-wrapper {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1100px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -265,6 +473,8 @@
     font-weight: 700;
     font-family: "Lato", sans-serif;
 }
+
+
 
 /* Footer ends */
 
@@ -326,6 +536,39 @@
         display: none;
     }
 
+    .team-heading {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .team-title {
+        font-size: 1.6rem;
+        text-align: left;
+        line-height: 1.5;
+    }
+
+    .team-count {
+        width: 225px;
+    }
+
+    .accordion {
+        display: none;
+    }
+
+    .switcher {
+        display: block;
+    }
+
+    .accordion-date {
+        gap: 4rem;
+        font-size: 1.6rem;
+    }
+
+    .accordion-heading {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+
 }
 
 @media(min-width: 1280px) {
@@ -342,9 +585,9 @@
 /* Custom SwiperJS styles starts */
 
 .swiper {
-    width: 80%;
+    width: 70%;
     height: 100%;
-    max-width: 1300px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 

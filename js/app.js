@@ -21,14 +21,40 @@ const swiper = new Swiper('.swiper', {
     },
 });
 
-const hamburgerBtn = document.querySelector('.hamburger-button');
-const closeBtn = document.querySelector('.close-button');
-const mobileMenu = document.querySelector('.sticky-menu');
 
-hamburgerBtn.addEventListener('click', () => {
-    mobileMenu.classList.add('active');
+$(document).ready(function () {
+    $('.hamburger-button').on('click', function () {
+        $('.sticky-menu').addClass('active');
+    });
+
+    $('.close-button').on('click', function () {
+        $('.sticky-menu').removeClass('active');
+    });
 });
 
-closeBtn.addEventListener('click', () => {
-    mobileMenu.classList.remove('active');
+
+$(document).ready(function () {
+    $('.accordion-button').on('click', function () {
+        var content = $(this).next('.accordion-content');
+
+        $('.accordion-content').not(content).removeClass('active');
+        $('.accordion-button').not(this).removeClass('active');
+
+        $(this).toggleClass('active');
+        content.toggleClass('active');
+    });
+});
+
+
+
+$(document).ready(function () {
+    $('.switch-button').on('click', function () {
+        $('.switch-button, .switcher-tab').removeClass('active');
+
+        $(this).addClass('active');
+
+        var tabId = $(this).data('tab');
+
+        $('.tab-' + tabId).addClass('active');
+    });
 });
