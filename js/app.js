@@ -21,40 +21,35 @@ const swiper = new Swiper('.swiper', {
     },
 });
 
-
 $(document).ready(function () {
+    const $stickyMenu = $('.sticky-menu');
+    const $accordionContent = $('.accordion-content');
+    const $accordionButton = $('.accordion-button');
+    const $switchButton = $('.switch-button');
+    const $switcherTab = $('.switcher-tab');
+
     $('.hamburger-button').on('click', function () {
-        $('.sticky-menu').addClass('active');
+        $stickyMenu.addClass('active').attr('aria-expanded', 'true').find('a').first().focus();
     });
 
     $('.close-button').on('click', function () {
-        $('.sticky-menu').removeClass('active');
+        $stickyMenu.removeClass('active').attr('aria-expanded', 'false');
+        $('.hamburger-button').focus();
     });
-});
 
-
-$(document).ready(function () {
-    $('.accordion-button').on('click', function () {
-        var content = $(this).next('.accordion-content');
-
-        $('.accordion-content').not(content).removeClass('active');
-        $('.accordion-button').not(this).removeClass('active');
-
-        $(this).toggleClass('active');
-        content.toggleClass('active');
+    $accordionButton.on('click', function () {
+        let $content = $(this).next('.accordion-content');
+        $accordionContent.not($content).slideUp().removeClass('active').prev().attr('aria-expanded', 'false');
+        $content.slideToggle().toggleClass('active');
+        $(this).toggleClass('active').attr('aria-expanded', $(this).hasClass('active'));
     });
-});
 
-
-
-$(document).ready(function () {
-    $('.switch-button').on('click', function () {
-        $('.switch-button, .switcher-tab').removeClass('active');
+    $switchButton.on('click', function () {
+        let tabId = $(this).data('tab');
+        $switchButton.removeClass('active');
+        $switcherTab.removeClass('active');
 
         $(this).addClass('active');
-
-        var tabId = $(this).data('tab');
-
         $('.tab-' + tabId).addClass('active');
     });
 });

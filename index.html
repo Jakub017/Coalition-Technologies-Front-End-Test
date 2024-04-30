@@ -5,13 +5,16 @@
     <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coalition Technologies Test</title>
+    <title>Los Angeles Mountains</title>
+    <meta name="description"
+        content="Explore the rich history and dedicated team behind the Los Angeles Mountains. Join us for a journey through the scenic beauty and exhilarating experiences our mountains have to offer.">
+    <meta name="keywords" content="Los Angeles Mountains, history, team, mountains, climb, schedule">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapsis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap"
         rel="stylesheet">
 
     <!-- CSS -->
@@ -47,8 +50,8 @@
                 <div class="navbar-wrapper">
                     <img src="img/color-logo.png" alt="Los Angeles Mountains Logo" class="logo">
                     <ul class="menu sticky-menu">
-                        <button class="close-button">
-                            <img src="img/close-icon.png" alt="Close mobile menu button">
+                        <button class="close-button" aria-label="Close mobile menu">
+                            <img src="img/close-icon.png" alt="">
                         </button>
                         <li>
                             <a href="index.html"><img src="img/color-logo.png" alt="Los Angeles Mountains Logo"
@@ -61,14 +64,14 @@
                             <a class="menu-link" href="#team">02. Team</a>
                         </li>
                     </ul>
-                    <button class="hamburger-button">
-                        <img src="img/hamburger-icon.png" alt="Open mobile menu button">
+                    <button class="hamburger-button" aria-label="Open mobile menu">
+                        <img src="img/hamburger-icon.png" alt="">
                     </button>
                 </div>
             </nav>
             <div class="history-wrapper">
                 <div class="history-content">
-                    <img src="img/history-heading.png" alt="History" class="section-heading">
+                    <img src="img/history-heading.png" alt="History section heading" class="section-heading">
                     <p class="history-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in
                         ante
                         viverra, rutrum erat rutrum, consectetur mi. Proin at maximus est. Nullam purus ex, iaculis sed
@@ -81,42 +84,56 @@
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="img/carousel-image-1.png" alt="" class="carousel-item">
+                                <img src="img/carousel-image-1.png"
+                                    alt="Hiker standing on a rocky outcrop overlooking a foggy mountain landscape"
+                                    class="carousel-item">
                             </div>
                             <div class="swiper-slide">
-                                <img src="img/carousel-image-2.png" alt="" class="carousel-item">
+                                <img src="img/carousel-image-2.png"
+                                    alt="Mountainous terrain with hikers on a rocky path under a cloudy sky"
+                                    class="carousel-item">
                             </div>
                             <div class="swiper-slide">
-                                <img src="img/carousel-image-1.png" alt="" class="carousel-item">
+                                <img src="img/carousel-image-1.png"
+                                    alt="Hiker standing on a rocky outcrop overlooking a foggy mountain landscape"
+                                    class="carousel-item">
                             </div>
                             <div class="swiper-slide">
-                                <img src="img/carousel-image-2.png" alt="" class="carousel-item">
+                                <img src="img/carousel-image-2.png"
+                                    alt="Mountainous terrain with hikers on a rocky path under a cloudy sky"
+                                    class="carousel-item">
                             </div>
                             <div class="swiper-slide">
-                                <img src="img/carousel-image-1.png" alt="" class="carousel-item">
+                                <img src="img/carousel-image-1.png"
+                                    alt="Hiker standing on a rocky outcrop overlooking a foggy mountain landscape"
+                                    class="carousel-item">
                             </div>
                             <div class="swiper-slide">
-                                <img src="img/carousel-image-2.png" alt="" class="carousel-item">
+                                <img src="img/carousel-image-2.png"
+                                    alt="Mountainous terrain with hikers on a rocky path under a cloudy sky"
+                                    class="carousel-item">
                             </div>
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
                 </div>
-                <img src="img/history-background.png" alt="" class="history-bg">
+                <img src="img/history-background.png"
+                    alt="Snow-capped mountain peak with forested slopes under a clear sky" class="history-bg">
             </div>
 
         </section>
         <div class="team" id="team">
             <div class="team-heading">
-                <img src="img/team-heading.png" alt="Climb" class="team-count">
+                <img src="img/team-heading.png" alt="Climb section heading" class="team-count">
                 <p class="team-title">Cras scelerisque id quam sed dignissim Pellentesque urna nunc, gravida quis
                     hendrerit ac, tristique ut quam. Vivamus suscipit dignissim tortor nec congue. </p>
             </div>
             <div class="accordion">
-                <button class="accordion-button active">Mountain 1 <img src="img/arrow-icon.png"
-                        class="accordion-arrow"></button>
-                <div class="accordion-content active">
-                    <img src="img/tab-1-background.png" class="accordion-background" alt="">
+                <button class="accordion-button" aria-expanded="true" aria-controls="panel1">Mountain 1 <img
+                        src="img/arrow-icon.png" class="accordion-arrow"></button>
+                <div id="panel1" class="accordion-content" aria-labelledby="accordion1">
+                    <img src="img/tab-1-background.png" class="accordion-background"
+                        alt="Flock of birds flying over the snow-covered peaks of a mountain shrouded in mist">
                     <div class="accordion-text accordion-text-tab-1">
                         <h4 class="accordion-heading">Schedule</h4>
                         <div class="accordion-date">
@@ -138,10 +155,11 @@
                     </div>
                 </div>
 
-                <button class="accordion-button">Mountain 2 <img src="img/arrow-icon.png"
-                        class="accordion-arrow"></button>
-                <div class="accordion-content">
-                    <img src="img/tab-2-background.png" class="accordion-background" alt="">
+                <button class="accordion-button" aria-expanded="false" aria-controls="panel2">Mountain 2 <img
+                        src="img/arrow-icon.png" class="accordion-arrow"></button>
+                <div id="panel2" class="accordion-content" aria-labelledby="accordion2">
+                    <img src="img/tab-2-background.png" class="accordion-background"
+                        alt="Sunlit snow-capped mountains under a clear blue sky with fluffy clouds">
                     <div class="accordion-text accordion-text-tab-2">
                         <h4 class="accordion-heading">Schedule</h4>
                         <div class="accordion-date">
@@ -192,7 +210,9 @@
                             </div>
                         </div>
                     </div>
-                    <img src="img/tab-1-background.png" alt="" class="tab-background">
+                    <img src="img/tab-1-background.png"
+                        alt="Flock of birds flying over the snow-covered peaks of a mountain shrouded in mist"
+                        class="tab-background">
                 </div>
                 <div class="switcher-tab tab-2">
                     <div class="switcher-text-wrapper">
@@ -216,7 +236,9 @@
                             </div>
                         </div>
                     </div>
-                    <img src="img/tab-2-background.png" alt="" class="tab-background">
+                    <img src="img/tab-2-background.png"
+                        alt="Sunlit snow-capped mountains under a clear blue sky with fluffy clouds"
+                        class="tab-background">
                 </div>
             </div>
         </div>
